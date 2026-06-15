@@ -1,0 +1,5 @@
+import uvicorn
+import os
+
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+uvicorn.run("main:app", host="127.0.0.1", port=9000, reload=False)
