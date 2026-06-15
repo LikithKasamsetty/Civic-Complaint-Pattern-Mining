@@ -19,6 +19,11 @@ Instead, the models in this project are evaluated based on how well they group s
 3. **Dimensionality Reduction (PCA & t-SNE)**
    - **Explained Variance**: Used to ensure that the reduced 2D representation retains the maximum possible information from the high-dimensional text features (TF-IDF).
 
+**Where is this located in the code?**
+These metrics are calculated dynamically during the data processing stage in the backend. You can find the exact implementation in:
+- `pipeline.py` (Around Lines 64-67), where `silhouette_score` and `davies_bouldin_score` are imported and computed.
+- The metrics are then exported in the final `results.json` to be displayed on the frontend dashboard.
+
 ## How to Run
 
 ### Install dependencies
@@ -29,8 +34,3 @@ python run_server.py
 
 ### Start the Frontend
 npm run dev
-
-**Where is this located in the code?**
-These metrics are calculated dynamically during the data processing stage in the backend. You can find the exact implementation in:
-- `backend/pipeline.py` (Around Lines 64-67), where `silhouette_score` and `davies_bouldin_score` are imported and computed.
-- The metrics are then exported in the final `results.json` to be displayed on the frontend dashboard.
